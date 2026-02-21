@@ -1,27 +1,27 @@
 import java.util.Scanner;
-class Expensive
+class ExamMark
 {
 		public static void main(String[] args)
 		{
 			Scanner sc=new Scanner(System.in);
-		    System.out.print("Enter Number of Expenses : ");
+		    System.out.print("Enter Number of Students : ");
 		    int length=sc.nextInt();
 		    int tm[] = new int [length];
-				    
+			System.out.print("Enter choice : ");		    
 			int c=1;
 		
 		    while(c<=5)
 		    {
-				System.out.println("1. Add Expenses");
-		        System.out.println("2. View the Expensive Details");
-		        System.out.println("3. TOtal Expensive");
-		        System.out.println("4. Highest Expensive ");
+				System.out.println("1. Add Exam Score");
+		        System.out.println("2. Display the Exam Score");
+		        System.out.println("3. Count Pass Score");
+		        System.out.println("4. Count the Fail Score");
 		        System.out.println("5. EXIT");
-		        System.out.println("*****************************************************************");
-				
+				 System.out.println("*****************************************************************");
+
 		        System.out.print("ENTER CHOICE : ");
 		        int choice=sc.nextInt();
-                Expensive price=new Expensive();
+                Exam score=new Exam();
 				switch(choice)
 		        {
 			        case 1:
@@ -31,26 +31,26 @@ class Expensive
 					  {
 					    System.out.print("Enter index value : ");
 		                int ivalue=sc.nextInt();
-					    System.out.print("Enter Amount : ");
-					    int amount=sc.nextInt();
-						tm=price.addamount(tm,ivalue,amount);  
+					    System.out.print("Enter mark : ");
+					    int marks=sc.nextInt();
+						tm=score.addscore(tm,ivalue,marks);  
 					  }
 		              	       	  				
 				   }
 			       break;
 			       case 2:
 			        {
-				      price.view(tm);
+				      score.display(tm);
 			        }
 			        break;
 			        case 3:
 			        {
-				      price.total(tm);				
+				      score.pass(tm);				
 			        }
 			        break;
 			        case 4:
 			        {
-				       price.highest(tm);
+				       score.fail(tm);
 			        }
 			        break;
 			        case 5:
@@ -67,51 +67,52 @@ class Expensive
 		
 		
 		//function1
-		int[] addamount(int ar[],int i,int m)
+		int[] addscore(int ar[],int i,int m)
 	{
 		
 		ar[i]=m;
 		m++;
-		System.out.println("Expensive Amount Added Successfully");
+		System.out.println("Exma Score Added Successfully");
 		return ar;
 	}
 	
 	//function2
-	void view(int ar[])
+	void display(int ar[])
 	{
 		for(int i=0;i<ar.length;i++)
 		{
 			System.out.print(ar[i]+" ");
 		}
-		System.out.println();
-		
 	}
 	//function3
-	void total(int ar[])
+	void pass(int ar[])
 	{
-		int totalamount=0;
+		int pass=0;
 		
 		for(int i=0;i<ar.length;i++)
 		{
-			totalamount+=ar[i];
+			if(ar[i]>=35)
+			{
+				pass++;
+			}
 	
 		}
-		System.out.println("Total Expensive Amount is  : "+totalamount);
+		System.out.println("Pass Score Count is : "+pass);
 		
 	}
 	//function4
-	void highest(int ar[])
+	void fail(int ar[])
 	{
-		int h=ar[0];
+		int fail=0;
 		for(int i=0;i<ar.length;i++)
 		{
-			if(ar[i]>h)
+			if(ar[i]<35)
 		    {
-			  h=ar[i];
+			  fail++;
 		    }
 			
 		}
-		System.out.println("Highest Expensive Amount is : "+h);
+		System.out.println("Fail Score Count is : "+fail);
 		
     }
 }
