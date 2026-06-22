@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial;
+}
+
+/* Header */
+header{
+    background:#2196F3;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+/* Navbar - Flexbox */
+nav{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    background:#333;
+    padding:15px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+}
+
+/* Grid Layout */
+.container{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:20px;
+    padding:20px;
+}
+
+/* Card */
+.card{
+    background:#f2f2f2;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+}
+
+/* Footer */
+footer{
+    background:black;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+    <h1>My Web Page</h1>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+</nav>
+
+<div class="container">
+
+<div class="card">
+<h2>HTML</h2>
+<p>Learn Structure</p>
+</div>
+
+<div class="card">
+<h2>CSS</h2>
+<p>Learn Design</p>
+</div>
+
+<div class="card">
+<h2>JavaScript</h2>
+<p>Learn Interaction</p>
+</div>
+
+</div>
+
+<footer>
+© 2026 My Website
+</footer>
+    
+</body>
+</html>
